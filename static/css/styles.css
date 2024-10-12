@@ -1,0 +1,76 @@
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+background-color: #326738;
+}
+
+h1 {
+color: #FFFFFF;
+text-align: center;
+margin-bottom: 50px;
+margin-top: 40px;
+font-size: 40px;
+}
+
+.match-container {
+margin-top: 40px;
+}
+
+.match-info {
+margin-bottom: 15px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.match-info:nth-child(odd) {
+background-color: #8EDC6C;
+}
+
+.match-info:nth-child(even) {
+background-color: #7CC05E;
+}
+
+hr {
+background-color: #FFFFFF;
+height: 3px;
+margin-bottom: 20px;
+}
+
+label {
+font-size: 1.3rem;
+color: #FFFFFF
+}
+
+input {
+font-size: 1.3rem;
+}
+
+button {
+font-size: 1.5rem;
+background-color: #9FE190;
+color: #000000;
+margin-left: 50px;
+}
+
+.sr-head {
+color: #FFFFFF;
+font-size: 20px;
+font-weight: normal;
+text-align: center;
+margin-top: 50px;
+}
+
+.sr-title {
+color: #FFFFFF;
+font-size: 20px;
+}
+
+.sr-info {
+color:#FFFFFF;
+font-size: 20px;
+}
+
+.search-fail {
+color: #FFFFFF;
+font-size: 20px;}

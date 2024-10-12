@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions League Matches</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Champions League Matches and Information</h1>
+
+    <form method="POST" action="/search">
+        <label for="team">Search Team Name:</label>
+        <input type="text" id="team" name="team" placeholder="Enter team name...">
+
+        <label for="matchday">Search Matchday:</label>
+        <input type="number" id="matchday" name="matchday" placeholder="Enter matchday..." min="1">
+
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="match-container">
+        {% if team_query or matchday_query %}
+            <h2 class="sr-head">Search Results</h2>
+            <p class="sr-title">You searched for:</p>
+            <ul class="sr-info">
+                {% if team_query %}
+                    <li>Team: {{ team_query }}</li>
+                {% endif %}
+                {% if matchday_query %}
+                    <li>Matchday: {{ matchday_query }}</li>
+                {% endif %}
+            </ul>
+            <hr>
+        {% endif %}
+
+        {% if no_data %}
+            <p>No data available.</p>
+        {% elif matches %}
+            {% for match in matches %}
+                <div class="match-info">
+                    <h2>Home Team: {{ match['homeTeam']['name'] }}</h2>
+                    <h2>Away Team: {{ match['awayTeam']['name'] }}</h2>
+                    <p>Season: {{ match['season']['startDate'] }} - {{ match['season']['endDate'] }}</p>
+                    <p>Matchday: {{ match['matchday'] }}</p>
+                    <p>Status: {{ match['status'] }}</p>
+                    <p>Score: {{ match['score']['fullTime']['home'] }} - {{ match['score']['fullTime']['away'] }}</p>
+                </div>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <p class="search-fail">No match data available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
