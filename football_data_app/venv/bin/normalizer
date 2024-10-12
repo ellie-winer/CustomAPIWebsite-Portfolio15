@@ -1,4 +1,4 @@
-#!/Users/elliewiner/PycharmProjects/CustomAPIWebsite-Portfolio15/shark_tracker_app/venv/bin/python3.12
+#!/Users/elliewiner/PycharmProjects/CustomAPIWebsite-Portfolio15/football_data_app/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
